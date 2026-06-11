@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acesso Restrito | Plasticlinic</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #fbf9f6;
+            color: #4a3b32;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            background-color: #ffffff;
+            width: 100%;
+            max-width: 750px;
+            padding: 50px 40px;
+            border-radius: 24px;
+            box-shadow: 0 15px 35px rgba(74, 59, 50, 0.05);
+            /* Removido completamente o border-top (faixa marrom do topo) */
+            text-align: center;
+        }
+
+        .logo-area {
+            margin-bottom: 35px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo-img {
+            max-height: 200px;
+            max-width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+
+        h1 {
+            font-size: 42px;
+            font-weight: 800;
+            color: #4a3b32;
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+            margin-bottom: 20px;
+        }
+
+        .divider {
+            width: 90px;
+            height: 5px;
+            background-color: #4a3b32;
+            margin: 0 auto 30px auto;
+            border-radius: 3px;
+        }
+
+        .message {
+            font-size: 21px;
+            line-height: 1.6;
+            color: #6e5d53;
+            max-width: 620px;
+            margin: 0 auto 40px auto;
+        }
+
+        .message strong {
+            color: #4a3b32;
+            font-weight: 700;
+        }
+
+        .btn-whatsapp {
+            display: inline-flex;
+            align-items: center;
+            background-color: #25d366;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 16px 36px;
+            font-size: 18px;
+            font-weight: 700;
+            border-radius: 50px;
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.2);
+            transition: transform 0.2s ease, background-color 0.2s ease;
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #20ba5a;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 24px rgba(37, 211, 102, 0.3);
+        }
+
+        .btn-whatsapp svg {
+            width: 24px;
+            height: 24px;
+            fill: #ffffff;
+            margin-right: 12px;
+        }
+
+        .footer {
+            margin-top: 45px;
+            font-size: 11px;
+            color: #bfae9e;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-top: 1px solid #f5f2ee;
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- LOGO OFICIAL DA PLASTICLINIC EM BASE64 -->
+        <div class="logo-area">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAA3NCSVQICAjb4U/gAAAAQlBMVEX////39vHh28+NcFJjLwDr5t+6qpZpOwBnNwBfKADFual3UCf18utvRhSDXzqvnIahinFXGgDRxrnc08eXfGBoOwB9oDxrAAAApHpUWHRSYXcgcHJvZmlsZSB0eXBlIEFQUDEAABiVfU7RCsMwCHzPV/QTLmpN8jlhZKMwttH/f5gmKbQwdqLnyaGGR3u1fbstn/19354tLI4oGqRIoQogY4CBSIjOVgcmc7SOrElT02AtOUFOvooLVnMoa0yWfeBelLFHjrNMFoA/c9rVjh/495xQxX+iqdP1NDTa5lWFV05Wlf1S4dy1Zdd/whG+BIhBD92YvH0AAA7mSURBVHic7V2JlqMqEA2yyKaIyP//6rAaNZoYO2nsOd7zzpukXcIVqCqKqvJ2u3DhwoULFy5cuHDhwoU/BFm6AV9Gr1TpJnwVXKi+L92IL6IXtbm1oHQzvgYM9QBupCvdjq+BI81vN6BN6YZ8CWDQ1nNTzX86SCvBBHb/AvSfDtKesShgiP4/JSlhDIYPQLD/Ut8rhmCcfT1rC7flK+gcwfRxYP+jQeMIZiUPKHs6DYGU2EP+KXmrGG3y3OuZ3pqG2JAOigYxB0SbdlDmj8xYwiit8pcONWvnyL4TlCFEqa09bE0pQsxC8gdIcjYdmHSckHdg0mqGbOQ2g6Op4dktIMPqiWzBGi0EjeSQMbrCbmTJ2lMrUGkpnagHzhCZHsaqYXSbXRyxlEH82+3ejxZZOmmeQlNRaiBCT3rvDkT57zd9HxSzbNo4SNk4rQzU+/j5fmRDgdbvgGGWziSLE5ipR/HwcnjOwNpTStXGWjadQrKhKHyXHdrg5+atUxkrghWdkWKH6rnoxNRS306yNv+canCa3jYONnxcPAMkTkexd2O0nllfftTKW9WyB3aI0XYgvcHhfCCrngyCzTv6dDY7aKllM93gGVqp5u22np7o+keFAIwS08lq2cnWzoTVVMwNaNerVsw70NFrVLVxixvo2wnHuVwuDunkxbJF3LGb2S8U0eGFVWYmHCk901R0YoYufU580X9M7LGsiR0pohOpRclsvbRB5wwpa/i+VWDVojxOT+SJdF1YP3hk3Dy887NvTKohPxp6GnnqNN9Ka0xmaJF9z5mh8pXPXQS/CIXWGmNYForDu6uFLl1KH9eXRQAa6oTmwyzDQZBa1ByYTTCaQRadYyXlRcqKb1s6e9Mt944p7jbqmQfxVQYtXZ8xwnWtOCgOcTRUH1RQEeAwaVaGk2M+X+S/AxKnIjuDwiBoQyR4M+C4vBf0NMPUN2W1IW5+2uP7FkaHYSp+0LIPoUJbiqtyA+0H5jP0nUg3fcq/B478Wn1VqjvF/QONFvSpPcFE9I/arvq2w6F17rvgZbQ9Lqs+BdnQTdsjKMrjoiKI0/ILjDCWNmh4PbJcF78BfA7rO6yRtuRJsAWOyxp/OV2fAL+IDj3Ry0FVHpf3/nJrS5umQZqwjVZgLyuOL4G8utkQ078H0HgLWW/NtcD/eCd6jYg2PVe/AxnMR7Z1uPe9wA4L/DCPCyvEKqhlunk86JLmqF0SltaFGfpOeibvok476tz1grq0J4O/YAgo/YHpZU7D8IksCZ242NHYDazLM/Qq6ylDIOxx2wvo8vMwMnxmd/DgGjwoT08gaV4zDCL/qN6vbXF9yIMLfltb3Lz9bQ8v9Jw9Udpq4881fkB0Kll0gGJj7WFl+iEEfVi/cDXA2NH0/YHa2OKOmsTw+UiS0W92wHxzDEuvDxu6x6uJ06agfte4sbb0Gj/7bV+NvyptBrP2PbnBfuBT/ghAk7YXXjbDpHCS90K6pC5t0qi0XUtfD6UqjmcffbhfwbmVy9bi+neAcyDCHoGHRX4crNurAJwcQz9q4U/R5WAn+7h7+AgA09auRQ3ZZ4lzVnaPVI6hCHafaeVDpN/iqFDZnZkuB03sdhmaJl9CEeteP5X2RbD/lyEn0SR7V/GgGyOCLGKQvxAjlqKSNpuahBzutzyMYHYM0Wc15E8oSFbUopFR/Cdr5Q2vJrH3R2MpQy0xG3OyZ0WnYQp5ojGm4J35AnxE+52kG66oVRw/dqZCrOTisI1d2ESD7D13miSLqH0neFjdDsoHnd5Pg+j4ts7PkSKe3DAKjph3N1AAb/UiNtqGzJlJwiJoiuZnDihKCxlNN/r+Eh4rgdAyvWTKybCSPhqQurDL0V2HZEJFYMPYVPBMh6Vie0ylbyF60GrtJUEQqrY+diOAuRotBzuTLG3RQOgoZ6K6iorxuPXRZ9PBzrKGMSsZX4rjLIysqtCfx23kNkucecYpZyW3f5P7LM2T6BE9upU5RtouBmV7fFfuA4B0Kvgi34M5v0CkLlxkO2FdMvRS1uGxZ2Eug6VJ60NW8pDkDFuMclI0vytabHfRHtdRhzox+bIe89VE0Q2LyOiuAqvZtHwHPBNcKgZTNC0IPHhJ4cFQSZ60vX64stMlU2Zil01N0Sr5Td+UDdFucOvcBzZ4PQ38txDnzswsjvLiTZ2odDT9VmLdSdEuzIJlaoBUUxNgH8CQtt3gowwGTdkA7ybapLOGRdZv7IVV0X9KV/U6L9uFQK+sCGV0Z6zUGFi/B9EhBHjDA16X3VMzj9PwNsr9fX5F0/oRarfcobxw4Z6077scXW2U/PS1awUPKMZwbxUXEIU3DZOgWTJJuxgvY7xw5+tiWMrEVkfx0ml5Ub3TB2GXxunzqWg8P+9FbDeHM6hLRz6HxcCarzYZ0dtLc0xahoJnDT6ZaKTsjloOKV3bMkzW3LoJDoxqKaMhV109oyB16fB8HJPu1lhglEIS8kHJCeGcEwUbzRhCjp1QLybZUDr6wpkvdjOuok95g/delEZBUftiSbRpoVrJxF/AlBYzSR1ubXuR1dUQkB677DAgylcaSNk6G2pPsbxkP2ZYqoNeyU8iOP+281dzDi8SRyRiVX6MRrVnn6RB5F48EuV1E2fINwwM6ZOQwZxsTt933KjictQjBj7bJ7YZSVtnlon39v/MCbINb3sY3njaOHPGmXpD4IDmHOVM+jhKnz5tU+fdlncKsA3lFUWAeSFpAuRYv4PuLqlASgdaZkSb5qXL/R5XQlm3h6MpGlkyBQ77MK+joPo8Uq1fy7/kKG3hkPU74tpih89dwrG6iUX0VQjU9nrx9yHo3ipO3I5VLu3zNeFtKL1kmmKguz34oGP34DfKms3Bqk4iRiNi8MVOt6GBk9pWriNbsjZayUkK0STEjLzdwTz9JALKO6Bo+1DQrD+LnkiQoWLFpjMFSADAbDHI57XmfBXBgeP7GWcjmLz6K6JGVsQv6EMdxFrAjozVj3m7KD1LmRb5uDnfCyLCRFz6vCUP0T8olrP0/w+xatlv0UO2KBDpjzftcEaCaZVvZ38aYuFqZBshGut9Tigwdf82XYiUxR19CPKimp+RYIqCmuj8qtXaQtXfa3JL4+tZUj82PctwVPpunhG0jPQHvR1fxnyYgk7TbrXgOOZdEqQ2jlkoZoUUGeGl3dsbCMZ3LmBWWfsklBn0w1jg2k7rsFLLGnPed7SEfLvoMu1fhi4B3tJF/dWaUlarW3cmU22OED8blD5f2aN+hORDS5OgTSXmOQBPDdXSgMn6Nvt7ARuiBugRFaF5IwGqAIzf6bY1Pu7dJMMphegdYZv0ePojONVqaRUx3eJo2Gx/+pcg3PIK41guededfIRGBO89OmBz9e0f6MCAwWcw7Q2gGYGHv9GBHjFlEr1lWAIFT60jFkgU36jyz8WJPGq74Ms2W1Tvk6iAN6dXEY8gKFQz27H/IpV4Z5fmPDCCeYfvq9HXw10V2U8JoEIQEBPbNdcrZc/9CqBXkN494ZZ7qOsfugm4RTDadgT/GWDlX8DhfaGw4wZjH1uCK8N9oNDLCKE/Av8CDu2DnhBzgza8W0VrXXevsrX/FmR8W5x18OFPfCuB+cKFCxcuXLhwNnDiwNOyvHcf54fdwYlax8q7e4ONrboEHxCF3WnJtgG88+eE2wD357tFZ9LNzXguT4cnp/Xh6p01mPbBaOasr/TmTKyX2TqDnqRgcaTbQWjvuMEsBK4zpkN2FNTJm2MafzdnzoU2Kj0JBpA03arJ2aOVjh+ITolsErJwtf6kIwQzGrKUYlPYcvNeiHvehURh47vyYSi497FTwm89RSoktZl5Nw1Imx18lt0sUphVh3JOcHIJmPyW7zqm2ZiPunow81u9VSpvoBcMe82H8YH2bF55DN9rnGWG7TyfeYNh06TTFww79o1iLpGh67zQF0uGg77xsRai0YtXxz4wrNi8KsEGQ2hYrAQ6Zyh/UN39CSJDo+N77BYMJetushlDCiGbBSE+MiRsHuS8wbB154f0sDlDw57HtB4ERtRnyaD49BYMiR+h3ZjEAwYnWe7BpI8Mu0VVgU2G7mH56T1n2LOvZM5iVEslhjTXFgxDmuA0cd64bhyH6iPDAc1Dg7YZAuFTUuYMOftKOVo/SsH46OYMTWz3rPiBaVHe9X5kqNC8JsE2w5uhTjAv+/BInd6XSJImYc5wQCsy/wZRykx8ZNizeSDVE4a+ZKIRc0mDvlKt9QlDmdXUXEtylipDr2kLVFezU7cZ3hQTdqktvvFq0jnDWJpKxgBKkg2cLmaO8PgV5qSuFYaYotpHpsg+XhGTo3AMVV0wvI3jPTN06pR5vyQwn+xLo/X9i9TICmfGhJbLJr+Pq49dazQknLQ6y4PqLvs6ndqEffCUu0M00AhDPkYsfgFNemJtttGaxLDX6VGBTmvqL/gkw26AdzVO4DAMcIhBIs7K7u9/Bn4nyjLGmnFzgoyXVu6aLCRMJ5qmVf4pyGGI9wtXcBg3FjmEaSxWcZQC14Y8OrFqm0bsqJr5LeCV0oA/APivnK2nxlTH4d1mx8vuBvM7fwk+KRdkswyzts3FMGwrxpCmbkyJ5c0wJhDi+1py5T3pWECY5EflbpsXDT4+Pq1QeiHcgXilWymKtJkO6rb5ZLhfJbobbzPDic3V+NVsahbIf5de12eRQrpR4q1sg3vZkc7EE3NcOIk0VhSR4+9N1IP/sUPZqRsw3SAhyQwbPnoxPLuhzz+aqPbThwvx2NRHhnKy0nO35eNtDbwzvD/RSnAy/tjqmDgM01WO1siw53nkeYZqyZBPskxc81Ru9xrDyZnT295gtcaw5Tz1OGja+pPmadXd4G1kOGmWb0ZOEB0ZmskwJm6iZZtsZZROumF+2+pecABvjNKPhsSFW9/7sDL58TXGjPmQ1ZgLKwg2qR89hVyiTvRm+dgJxFW27qa39TlH+ZwJw7Yy+XEK998H1/rYDzSTbii9izAdUJ0af4aocQ2sYFrlS080eyFJ1z2EYfBhmN42HVajleoPjH2Fu/EOgExPuXDhwoULFy5cuHDhwoULFy5cuHDhwoULFy5cuHDhwoULFy5cuHDhwk78AzBXv7EV2ylfAAAAAElFTkSuQmCC" class="logo-img" alt="Logo Plasticlinic">
+        </div>
+
+        <h1>Acesso Restrito</h1>
+        <div class="divider"></div>
+
+        <div class="content-area">
+            <p class="message">
+                Esta página foi bloqueada pelas <strong>políticas de segurança</strong> da rede Plasticlinic. 
+                Se você precisa de acesso para fins profissionais, entre em contato com o administrador.
+            </p>
+
+            <!-- Botão Atualizado com o Número do WhatsApp: +55 85 987091500 -->
+            <a href="https://wa.me/5585987091500?text=Olá,%20meu%20acesso%20à%20internet%20foi%20bloqueado%20pela%20política%20da%20Plasticlinic%20e%20gostaria%20de%20solicitar%20a%20análise%20do%20administrador." class="btn-whatsapp" target="_blank">
+                <svg viewBox="0 0 24 24">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.454 5.709 1.455h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                </svg>
+                <span>Falar com o Administrador</span>
+            </a>
+        </div>
+
+        <div class="footer">
+            PLASTICLINIC MEDICAL CENTER &copy; 2026 | DEPARTAMENTO DE TI
+        </div>
+    </div>
+
+</body>
+</html>
